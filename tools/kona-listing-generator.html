@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kona Precept 120 Marketplace Listing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 30px;
+        }
+        
+        .photo-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+        }
+        
+        .photo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .hero-photo {
+            grid-column: 1 / -1;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .hero-photo img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .detail-photo {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .detail-photo img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+        }
+        
+        .listing-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+        }
+        
+        .price-section {
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .price {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .price-subtitle {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        
+        .listing-content {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .listing-content h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .listing-text {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #34495e;
+            white-space: pre-line;
+            border: 2px dashed #e9ecef;
+            padding: 15px;
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .spec-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .spec-label {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .spec-value {
+            color: #34495e;
+            font-size: 1.1em;
+            margin-top: 5px;
+        }
+        
+        .copy-button {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(52,152,219,0.3);
+        }
+        
+        .copy-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(52,152,219,0.4);
+        }
+        
+        .copy-success {
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .feature-badge {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 12px 15px;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .price {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>2017 Kona Precept 120</h1>
+            <p>Full Suspension Mountain Bike - Ready for Adventure</p>
+        </div>
+        
+        <div class="content">
+            <div class="photo-section">
+                <h3 style="margin-bottom: 20px; color: #2c3e50; font-size: 1.3em;">📸 Your Photos</h3>
+                <div class="photo-grid">
+                    <div class="hero-photo">
+                        <img src="https://raw.githubusercontent.com/sparkdark-lab/selling-inventory/main/bicycles-equipment/kona-precept-120/1_kona_precept_120_hero_mountain.jpg" alt="Kona Precept 120 Hero Shot">
+                    </div>
+                    <div class="detail-photo">
+                        <img src="https://raw.githubusercontent.com/sparkdark-lab/selling-inventory/main/bicycles-equipment/kona-precept-120/2_kona_precept_120_full_profile.jpg" alt="Full Bike Profile">
+                    </div>
+                    <div class="detail-photo">
+                        <img src="https://raw.githubusercontent.com/sparkdark-lab/selling-inventory/main/bicycles-equipment/kona-precept-120/3_rockshox_front_suspension.jpg" alt="RockShox Front Suspension">
+                    </div>
+                    <div class="detail-photo">
+                        <img src="https://raw.githubusercontent.com/sparkdark-lab/selling-inventory/main/bicycles-equipment/kona-precept-120/4_kona_rear_shock_detail.jpg" alt="Kona Rear Shock">
+                    </div>
+                    <div class="detail-photo">
+                        <img src="https://raw.githubusercontent.com/sparkdark-lab/selling-inventory/main/bicycles-equipment/kona-precept-120/5_shimano_drivetrain_detail.jpg" alt="Shimano Drivetrain">
+                    </div>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-badge">🚵‍♂️ Full Suspension</div>
+                    <div class="feature-badge">🔧 Shimano Components</div>
+                    <div class="feature-badge">🛡️ Hydraulic Disc Brakes</div>
+                    <div class="feature-badge">⭐ 27.5" Wheels</div>
+                </div>
+            </div>
+            
+            <div class="listing-section">
+                <div class="price-section">
+                    <div class="price">$800</div>
+                    <div class="price-subtitle">Originally $1,499 MSRP</div>
+                </div>
+                
+                <div class="listing-content">
+                    <h3>📝 Facebook Marketplace Description</h3>
+                    <div class="listing-text" id="listingText">🚵‍♂️ 2017 Kona Precept 120 Full Suspension Mountain Bike - Excellent Condition
+
+Ready to hit the trails! This premium Kona mountain bike features quality components and has been well-maintained.
+
+🔥 KEY FEATURES:
+• Full Suspension - 120mm front & rear travel for smooth rides
+• RockShox 30 Silver TK Fork - Professional-grade suspension
+• Shimano SLX/Deore Groupset - Reliable shifting & performance  
+• Shimano Hydraulic Disc Brakes - Superior stopping power
+• 27.5" Aluminum Wheels - Perfect balance of speed & agility
+• 3x9 Drivetrain - Wide gear range for any terrain
+
+📐 SPECIFICATIONS:
+• Frame: Kona 6061 Aluminum Butted
+• Fork: RockShox 30 Silver TK Solo Air 120mm
+• Brakes: Shimano Hydraulic Disc
+• Tires: Maxxis Ardent 27.5x2.25"
+• Multiple frame sizes available
+
+💪 CONDITION: Excellent - well-maintained, ready to ride
+🏔️ Perfect for trail riding, cross-country, and adventure
+🔧 Recent tune-up completed
+
+Originally $1,499 MSRP. Asking $800.
+
+Cash only, serious inquiries welcome. Can meet in safe public location.
+
+#KonaBikes #MountainBike #FullSuspension #Shimano #RockShox #TrailReady</div>
+                </div>
+                
+                <button class="copy-button" onclick="copyListing()">📋 Copy Listing Text</button>
+                
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">Frame</div>
+                        <div class="spec-value">Kona 6061 Aluminum</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Suspension</div>
+                        <div class="spec-value">Full, 120/120mm</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Fork</div>
+                        <div class="spec-value">RockShox 30 Silver TK</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Brakes</div>
+                        <div class="spec-value">Shimano Hydraulic Disc</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Drivetrain</div>
+                        <div class="spec-value">3x9 Shimano SLX/Deore</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Wheels</div>
+                        <div class="spec-value">27.5" Aluminum</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Original MSRP</div>
+                        <div class="spec-value">$1,499</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Asking Price</div>
+                        <div class="spec-value">$800</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyListing() {
+            const listingText = document.getElementById('listingText').textContent;
+            const button = document.querySelector('.copy-button');
+            
+            navigator.clipboard.writeText(listingText).then(function() {
+                button.textContent = '✅ Copied to Clipboard!';
+                button.classList.add('copy-success');
+                
+                setTimeout(function() {
+                    button.textContent = '📋 Copy Listing Text';
+                    button.classList.remove('copy-success');
+                }, 3000);
+            }).catch(function() {
+                button.textContent = '❌ Copy Failed - Try Manual Copy';
+                setTimeout(function() {
+                    button.textContent = '📋 Copy Listing Text';
+                }, 3000);
+            });
+        }
+    </script>
+</body>
+</html>
